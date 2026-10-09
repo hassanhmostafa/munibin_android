@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/prayer_lock_widget_root" android:layout_width="match_parent" android:layout_height="match_parent" android:layoutDirection="ltr">
+    <ImageView android:id="@+id/prayer_lock_widget_theme_background" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitXY" android:importantForAccessibility="no" android:src="@drawable/prayer_widget_background_dark" />
+<LinearLayout
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:layoutDirection="ltr"
+    android:gravity="center_vertical" android:paddingStart="14dp" android:paddingEnd="14dp"
+    android:paddingTop="10dp" android:paddingBottom="10dp"
+    >
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="34dp" android:layoutDirection="ltr">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true" android:layout_centerVertical="true"
+            android:orientation="vertical" android:gravity="end">
+            <TextView android:id="@+id/prayer_lock_widget_name"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:includeFontPadding="false" android:text="منيبين" android:textDirection="rtl"
+                android:textSize="13sp" android:textStyle="bold" android:textColor="@color/prayer_widget_dark_primary" />
+            <TextView android:id="@+id/prayer_lock_widget_date"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:includeFontPadding="false" android:text="مواقيت الصلاة" android:textDirection="rtl"
+                android:maxLines="2" android:ellipsize="end" android:textSize="10sp"
+                android:textColor="@color/prayer_widget_dark_secondary" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:id="@+id/prayer_lock_widget_list"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="6dp" android:orientation="vertical" android:visibility="gone">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="28dp"
+            android:orientation="horizontal" android:layoutDirection="ltr" android:gravity="center_vertical">
+            <Chronometer android:id="@+id/prayer_lock_fajr_countdown"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:gravity="start" android:includeFontPadding="false"
+                android:fontFamily="@font/widget_latin_digits" android:textLocale="en-US"
+                android:textDirection="ltr" android:textSize="15sp" android:textStyle="bold"
+                android:textColor="@color/prayer_widget_dark_highlight" android:visibility="gone" />
+            <TextView android:id="@+id/prayer_lock_fajr_iqama"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="5dp" android:includeFontPadding="false"
+                android:text="إقامة" android:textDirection="rtl" android:textSize="12sp"
+                android:textColor="@color/prayer_widget_dark_highlight" android:visibility="gone" />
+            <TextView android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" android:text="" />
+            <TextView android:id="@+id/prayer_lock_fajr_time"
+                android:layout_width="58dp" android:layout_height="wrap_content"
+                android:includeFontPadding="false" android:maxLines="1" android:gravity="end" android:text="--:--"
+                android:fontFamily="@font/widget_latin_digits" android:textLocale="en-US"
+                android:textDirection="ltr" android:textSize="15sp" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="11sp" android:autoSizeMaxTextSize="15sp" android:autoSizeStepGranularity="1sp" android:textStyle="bold"
+                android:textColor="@color/prayer_widget_dark_primary" />
+            <TextView android:id="@+id/prayer_lock_fajr_label"
+                android:layout_width="54dp" android:layout_height="wrap_content"
+                android:layout_marginStart="5dp" android:includeFontPadding="false"
+                android:gravity="end" android:text="الفجر" android:textDirection="rtl"
+                android:textSize="13sp" android:textStyle="bold" android:maxLines="1"
+                android:textColor="@color/prayer_widget_dark_primary" />
+            <ImageView android:id="@+id/prayer_lock_fajr_icon"
+                android:layout_width="17dp" android:layout_height="17dp" android:layout_marginStart="6dp"
+                android:src="@drawable/ic_prayer_sunrise" android:contentDescription="الفجر" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="28dp"
+            android:orientation="horizontal" android:layoutDirection="ltr" android:gravity="center_vertical">
+            <Chronometer android:id="@+id/prayer_lock_sunrise_countdown"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:gravity="start" android:includeFontPadding="false"
+                android:fontFamily="@font/widget_latin_digits" android:textLocale="en-US"
+                android:textDirection="ltr" android:textSize="15sp" android:textStyle="bold"
+                android:textColor="@color/prayer_widget_dark_highlight" android:visibility="gone" />
+            <TextView android:id="@+id/prayer_lock_sunrise_iqama"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="5dp" android:includeFontPadding="false"
+                android:text="إقامة" android:textDirection="rtl" android:textSize="12sp"
+                android:textColor="@color/prayer_widget_dark_highlight" android:visibility="gone" />
+            <TextView android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" android:text="" />
+            <TextView android:id="@+id/prayer_lock_sunrise_time"
+                android:layout_width="58dp" android:layout_height="wrap_content"
+                android:includeFontPadding="false" android:maxLines="1" android:gravity="end" android:text="--:--"
+                android:fontFamily="@font/widget_latin_digits" android:textLocale="en-US"
+                android:textDirection="ltr" android:textSize="15sp" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="11sp" android:autoSizeMaxTextSize="15sp" android:autoSizeStepGranularity="1sp" android:textStyle="bold"
+                android:textColor="@color/prayer_widget_dark_primary" />
+            <TextView android:id="@+id/prayer_lock_sunrise_label"
+                android:layout_width="54dp" android:layout_height="wrap_content"
+                android:layout_marginStart="5dp" android:includeFontPadding="false"
+                android:gravity="end" android:text="الشروق" android:textDirection="rtl"
+                android:textSize="13sp" android:textStyle="bold" android:maxLines="1"
+                android:textColor="@color/prayer_widget_dark_primary" />
+            <ImageView android:id="@+id/prayer_lock_sunrise_icon"
+                android:layout_width="17dp" android:layout_height="17dp" android:layout_marginStart="6dp"
+                android:src="@drawable/ic_prayer_sunrise" android:contentDescription="الشروق" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="28dp"
+            android:orientation="horizontal" android:layoutDirection="ltr" android:gravity="center_vertical">
+            <Chronometer android:id="@+id/prayer_lock_dhuhr_countdown"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:gravity="start" android:includeFontPadding="false"
+                android:fontFamily="@font/widget_latin_digits" android:textLocale="en-US"
+                android:textDirection="ltr" android:textSize="15sp" android:textStyle="bold"
+                android:textColor="@color/prayer_widget_dark_highlight" android:visibility="gone" />
+            <TextView android:id="@+id/prayer_lock_dhuhr_iqama"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="5dp" android:includeFontPadding="false"
+                android:text="إقامة" android:textDirection="rtl" android:textSize="12sp"
+                android:textColor="@color/prayer_widget_dark_highlight" android:visibility="gone" />
+            <TextView android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" android:text="" />
+            <TextView android:id="@+id/prayer_lock_dhuhr_time"
+                android:layout_width="58dp" android:layout_height="wrap_content"
+                android:includeFontPadding="false" android:maxLines="1" android:gravity="end" android:text="--:--"
+                android:fontFamily="@font/widget_latin_digits" android:textLocale="en-US"
+                android:textDirection="ltr" android:textSize="15sp" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="11sp" android:autoSizeMaxTextSize="15sp" android:autoSizeStepGranularity="1sp" android:textStyle="bold"
+                android:textColor="@color/prayer_widget_dark_primary" />
+            <TextView android:id="@+id/prayer_lock_dhuhr_label"
+                android:layout_width="54dp" android:layout_height="wrap_content"
+                android:layout_marginStart="5dp" android:includeFontPadding="false"
+                android:gravity="end" android:text="الظهر" android:textDirection="rtl"
+                android:textSize="13sp" android:textStyle="bold" android:maxLines="1"
+                android:textColor="@color/prayer_widget_dark_primary" />
+            <ImageView android:id="@+id/prayer_lock_dhuhr_icon"
+                android:layout_width="17dp" android:layout_height="17dp" android:layout_marginStart="6dp"
+                android:src="@drawable/ic_prayer_sun_max" android:contentDescription="الظهر" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="28dp"
+            android:orientation="horizontal" android:layoutDirection="ltr" android:gravity="center_vertical">
+            <Chronometer android:id="@+id/prayer_lock_asr_countdown"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:gravity="start" android:includeFontPadding="false"
+                android:fontFamily="@font/widget_latin_digits" android:textLocale="en-US"
+                android:textDirection="ltr" android:textSize="15sp" android:textStyle="bold"
+                android:textColor="@color/prayer_widget_dark_highlight" android:visibility="gone" />
+            <TextView android:id="@+id/prayer_lock_asr_iqama"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="5dp" android:includeFontPadding="false"
+                android:text="إقامة" android:textDirection="rtl" android:textSize="12sp"
+                android:textColor="@color/prayer_widget_dark_highlight" android:visibility="gone" />
+            <TextView android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" android:text="" />
+            <TextView android:id="@+id/prayer_lock_asr_time"
+                android:layout_width="58dp" android:layout_height="wrap_content"
+                android:includeFontPadding="false" android:maxLines="1" android:gravity="end" android:text="--:--"
+                android:fontFamily="@font/widget_latin_digits" android:textLocale="en-US"
+                android:textDirection="ltr" android:textSize="15sp" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="11sp" android:autoSizeMaxTextSize="15sp" android:autoSizeStepGranularity="1sp" android:textStyle="bold"
+                android:textColor="@color/prayer_widget_dark_primary" />
+            <TextView android:id="@+id/prayer_lock_asr_label"
+                android:layout_width="54dp" android:layout_height="wrap_content"
+                android:layout_marginStart="5dp" android:includeFontPadding="false"
+                android:gravity="end" android:text="العصر" android:textDirection="rtl"
+                android:textSize="13sp" android:textStyle="bold" android:maxLines="1"
+                android:textColor="@color/prayer_widget_dark_primary" />
+            <ImageView android:id="@+id/prayer_lock_asr_icon"
+                android:layout_width="17dp" android:layout_height="17dp" android:layout_marginStart="6dp"
+                android:src="@drawable/ic_prayer_sun_haze" android:contentDescription="العصر" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="28dp"
+            android:orientation="horizontal" android:layoutDirection="ltr" android:gravity="center_vertical">
+            <Chronometer android:id="@+id/prayer_lock_maghrib_countdown"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:gravity="start" android:includeFontPadding="false"
+                android:fontFamily="@font/widget_latin_digits" android:textLocale="en-US"
+                android:textDirection="ltr" android:textSize="15sp" android:textStyle="bold"
+                android:textColor="@color/prayer_widget_dark_highlight" android:visibility="gone" />
+            <TextView android:id="@+id/prayer_lock_maghrib_iqama"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="5dp" android:includeFontPadding="false"
+                android:text="إقامة" android:textDirection="rtl" android:textSize="12sp"
+                android:textColor="@color/prayer_widget_dark_highlight" android:visibility="gone" />
+            <TextView android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" android:text="" />
+            <TextView android:id="@+id/prayer_lock_maghrib_time"
+                android:layout_width="58dp" android:layout_height="wrap_content"
+                android:includeFontPadding="false" android:maxLines="1" android:gravity="end" android:text="--:--"
+                android:fontFamily="@font/widget_latin_digits" android:textLocale="en-US"
+                android:textDirection="ltr" android:textSize="15sp" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="11sp" android:autoSizeMaxTextSize="15sp" android:autoSizeStepGranularity="1sp" android:textStyle="bold"
+                android:textColor="@color/prayer_widget_dark_primary" />
+            <TextView android:id="@+id/prayer_lock_maghrib_label"
+                android:layout_width="54dp" android:layout_height="wrap_content"
+                android:layout_marginStart="5dp" android:includeFontPadding="false"
+                android:gravity="end" android:text="المغرب" android:textDirection="rtl"
+                android:textSize="13sp" android:textStyle="bold" android:maxLines="1"
+                android:textColor="@color/prayer_widget_dark_primary" />
+            <ImageView android:id="@+id/prayer_lock_maghrib_icon"
+                android:layout_width="17dp" android:layout_height="17dp" android:layout_marginStart="6dp"
+                android:src="@drawable/ic_prayer_sunset" android:contentDescription="المغرب" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="28dp"
+            android:orientation="horizontal" android:layoutDirection="ltr" android:gravity="center_vertical">
+            <Chronometer android:id="@+id/prayer_lock_isha_countdown"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:gravity="start" android:includeFontPadding="false"
+                android:fontFamily="@font/widget_latin_digits" android:textLocale="en-US"
+                android:textDirection="ltr" android:textSize="15sp" android:textStyle="bold"
+                android:textColor="@color/prayer_widget_dark_highlight" android:visibility="gone" />
+            <TextView android:id="@+id/prayer_lock_isha_iqama"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="5dp" android:includeFontPadding="false"
+                android:text="إقامة" android:textDirection="rtl" android:textSize="12sp"
+                android:textColor="@color/prayer_widget_dark_highlight" android:visibility="gone" />
+            <TextView android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" android:text="" />
+            <TextView android:id="@+id/prayer_lock_isha_time"
+                android:layout_width="58dp" android:layout_height="wrap_content"
+                android:includeFontPadding="false" android:maxLines="1" android:gravity="end" android:text="--:--"
+                android:fontFamily="@font/widget_latin_digits" android:textLocale="en-US"
+                android:textDirection="ltr" android:textSize="15sp" android:autoSizeTextType="uniform" android:autoSizeMinTextSize="11sp" android:autoSizeMaxTextSize="15sp" android:autoSizeStepGranularity="1sp" android:textStyle="bold"
+                android:textColor="@color/prayer_widget_dark_primary" />
+            <TextView android:id="@+id/prayer_lock_isha_label"
+                android:layout_width="54dp" android:layout_height="wrap_content"
+                android:layout_marginStart="5dp" android:includeFontPadding="false"
+                android:gravity="end" android:text="العشاء" android:textDirection="rtl"
+                android:textSize="13sp" android:textStyle="bold" android:maxLines="1"
+                android:textColor="@color/prayer_widget_dark_primary" />
+            <ImageView android:id="@+id/prayer_lock_isha_icon"
+                android:layout_width="17dp" android:layout_height="17dp" android:layout_marginStart="6dp"
+                android:src="@drawable/ic_prayer_moon_stars" android:contentDescription="العشاء" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:id="@+id/prayer_lock_widget_empty_note"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp"
+        android:gravity="center" android:text="فعّل مواقيت الصلاة من التطبيق"
+        android:includeFontPadding="false" android:textDirection="rtl" android:textSize="14sp"
+        android:textColor="@color/prayer_widget_dark_secondary" />
+</LinearLayout>
+
+</FrameLayout>

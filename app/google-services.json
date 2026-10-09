@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "552112521484",
+    "project_id": "munibin-563bb",
+    "storage_bucket": "munibin-563bb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552112521484:android:2c25b9a735d8f8bed7c929",
+        "android_client_info": {
+          "package_name": "com.motoonai.twa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeWVIs-4Rq1KN7pjThJyrBRwOaKE8NdOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

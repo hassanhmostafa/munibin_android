@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appName">منيبين</string>
+    <string name="launcherName">منيبين</string>
+    <string name="prayer_widget_description">الصلاة القادمة ومواقيت اليوم من منيبين</string>
+    <string name="prayer_lock_widget_description">مواقيت الصلاة مع العد التنازلي للصلاة والإقامة</string>
+</resources>

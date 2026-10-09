@@ -1,0 +1,139 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.motoonai.twa'
+    compileSdk 36
+
+    defaultConfig {
+        // Kept unchanged so this project can update the existing Android app.
+        applicationId 'com.motoonai.twa'
+        minSdk 23
+        targetSdk 36
+        versionCode 74
+        versionName '1.0.0.62'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lint {
+        checkReleaseBuilds false
+    }
+
+    // These assets are already compressed. Store them directly in the APK so
+    // reading them does not add an unnecessary second decompression pass.
+    androidResources {
+        noCompress += ['gz', 'woff2']
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.core:core:1.15.0'
+    implementation platform('com.google.firebase:firebase-bom:34.19.0')
+    implementation 'com.google.firebase:firebase-messaging'
+}
+
+
+// Munibin v193: vendor all selectable Arabic fonts into the packaged web bundle
+// at build time. Runtime WebView never contacts Google Fonts. The source URLs
+// are pinned to an immutable Fontsource snapshot and each WOFF2 is validated.
+def nativeFontDir = file('src/main/assets/www/assets/native-fonts')
+def nativeFontManifest = new File(nativeFontDir, 'font-manifest-v193.tsv')
+
+tasks.register('fetchNativeFontsV193') {
+    group = 'munibin'
+    description = 'Downloads the pinned Arabic font assets that are bundled into the native app.'
+    inputs.file(nativeFontManifest)
+    outputs.dir(nativeFontDir)
+
+    doLast {
+        if (!nativeFontManifest.exists()) {
+            throw new GradleException('Missing native font manifest: ' + nativeFontManifest)
+        }
+        nativeFontDir.mkdirs()
+
+        nativeFontManifest.eachLine('UTF-8') { rawLine ->
+            def line = rawLine.trim()
+            if (!line || line.startsWith('#')) return
+            def fields = rawLine.split('\\t')
+            if (fields.length < 2) {
+                throw new GradleException('Invalid native font manifest row: ' + rawLine)
+            }
+            def fileName = fields[0].trim()
+            def urls = fields.drop(1).collect { it.trim() }.findAll { it }
+            def destination = new File(nativeFontDir, fileName)
+
+            def validWoff2 = { File candidate ->
+                if (!candidate.exists() || candidate.length() < 1024) return false
+                candidate.withInputStream { input ->
+                    byte[] magic = new byte[4]
+                    if (input.read(magic) != 4) return false
+                    return magic[0] == 0x77 && magic[1] == 0x4f && magic[2] == 0x46 && magic[3] == 0x32
+                }
+            }
+
+            if (validWoff2(destination)) return
+
+            File temp = new File(nativeFontDir, '.' + fileName + '.download')
+            temp.delete()
+            Exception lastError = null
+            boolean downloaded = false
+            urls.each { sourceUrl ->
+                if (downloaded) return
+                try {
+                    logger.lifecycle('Vendoring Munibin font: ' + fileName)
+                    def connection = new URL(sourceUrl).openConnection()
+                    connection.setConnectTimeout(20000)
+                    connection.setReadTimeout(60000)
+                    connection.setRequestProperty('User-Agent', 'Munibin-Native-Build/193')
+                    connection.inputStream.withCloseable { input ->
+                        temp.withOutputStream { output -> output << input }
+                    }
+                    if (!validWoff2(temp)) {
+                        throw new GradleException('Downloaded data is not a valid WOFF2: ' + fileName)
+                    }
+                    downloaded = true
+                } catch (Exception error) {
+                    lastError = error
+                    temp.delete()
+                }
+            }
+            if (!downloaded) {
+                throw new GradleException('Unable to vendor native font ' + fileName, lastError)
+            }
+            if (destination.exists()) destination.delete()
+            if (!temp.renameTo(destination)) {
+                destination.bytes = temp.bytes
+                temp.delete()
+            }
+        }
+    }
+}
+
+// Prevent accidentally signing a build that still contains only the placeholder
+// native bundle. Run `pnpm native:prepare` from ../Munibin_project first.
+tasks.register('verifyNativeFrontend') {
+    dependsOn(tasks.named('fetchNativeFontsV193'))
+    doLast {
+        def indexFile = file('src/main/assets/www/index.html')
+        if (!indexFile.exists()) {
+            throw new GradleException(
+                'Bundled Munibin frontend is missing. From Munibin_project run: pnpm install --frozen-lockfile && pnpm native:prepare'
+            )
+        }
+    }
+}
+preBuild.dependsOn(tasks.named('verifyNativeFrontend'))

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Six spacious rows; only the current prayer/sunrise has a timer beside its name. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/prayer_live_container"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@color/prayer_live_background" android:layoutDirection="ltr"
+    android:orientation="vertical" android:padding="8dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:minHeight="34dp" android:paddingTop="3dp" android:paddingBottom="3dp"
+        android:gravity="center_vertical" android:orientation="horizontal" android:layoutDirection="ltr">
+        <TextView android:id="@+id/prayer_live_fajr_time"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="start"
+            android:fontFamily="@font/widget_latin_digits" android:includeFontPadding="false"
+            android:maxLines="1" android:textLocale="en-US" android:textColor="@color/prayer_live_primary"
+            android:textDirection="ltr" android:textSize="18sp" android:textStyle="bold" />
+        <TextView android:id="@+id/prayer_live_fajr_iqama"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp"
+            android:fontFamily="@font/widget_latin_digits" android:gravity="start"
+            android:includeFontPadding="false" android:maxLines="1" android:textLocale="en-US"
+            android:textColor="@color/prayer_live_primary" android:textDirection="ltr" android:textSize="14sp" android:textStyle="normal" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:layout_marginStart="8dp" android:gravity="end|center_vertical"
+            android:orientation="horizontal" android:layoutDirection="ltr">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center_horizontal">
+                <TextView android:id="@+id/prayer_live_fajr_phase"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:includeFontPadding="false" android:maxLines="1" android:textColor="@color/prayer_live_iqama_light"
+                    android:textDirection="rtl" android:textSize="10sp" android:visibility="gone" />
+                <TextView android:id="@+id/prayer_live_fajr_countdown"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:fontFamily="@font/widget_latin_digits" android:includeFontPadding="false"
+                    android:maxLines="1" android:textLocale="en-US" android:textColor="@color/prayer_live_remaining_light"
+                    android:textDirection="ltr" android:textSize="18sp" android:textStyle="bold" android:visibility="gone" />
+            </LinearLayout>
+            <TextView android:id="@+id/prayer_live_fajr_label"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="96dp"
+                android:gravity="end" android:layout_marginStart="6dp" android:includeFontPadding="false"
+                android:maxLines="1" android:ellipsize="end" android:textColor="@color/prayer_live_secondary"
+                android:textDirection="rtl" android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:minHeight="34dp" android:paddingTop="3dp" android:paddingBottom="3dp"
+        android:gravity="center_vertical" android:orientation="horizontal" android:layoutDirection="ltr">
+        <TextView android:id="@+id/prayer_live_sunrise_time"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="start"
+            android:fontFamily="@font/widget_latin_digits" android:includeFontPadding="false"
+            android:maxLines="1" android:textLocale="en-US" android:textColor="@color/prayer_live_primary"
+            android:textDirection="ltr" android:textSize="18sp" android:textStyle="bold" />
+        <TextView android:id="@+id/prayer_live_sunrise_iqama"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp"
+            android:fontFamily="@font/widget_latin_digits" android:gravity="start"
+            android:includeFontPadding="false" android:maxLines="1" android:textLocale="en-US"
+            android:textColor="@color/prayer_live_primary" android:textDirection="ltr" android:textSize="14sp" android:textStyle="normal" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:layout_marginStart="8dp" android:gravity="end|center_vertical"
+            android:orientation="horizontal" android:layoutDirection="ltr">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center_horizontal">
+                <TextView android:id="@+id/prayer_live_sunrise_phase"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:includeFontPadding="false" android:maxLines="1" android:textColor="@color/prayer_live_iqama_light"
+                    android:textDirection="rtl" android:textSize="10sp" android:visibility="gone" />
+                <TextView android:id="@+id/prayer_live_sunrise_countdown"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:fontFamily="@font/widget_latin_digits" android:includeFontPadding="false"
+                    android:maxLines="1" android:textLocale="en-US" android:textColor="@color/prayer_live_remaining_light"
+                    android:textDirection="ltr" android:textSize="18sp" android:textStyle="bold" android:visibility="gone" />
+            </LinearLayout>
+            <TextView android:id="@+id/prayer_live_sunrise_label"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="96dp"
+                android:gravity="end" android:layout_marginStart="6dp" android:includeFontPadding="false"
+                android:maxLines="1" android:ellipsize="end" android:textColor="@color/prayer_live_secondary"
+                android:textDirection="rtl" android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:minHeight="34dp" android:paddingTop="3dp" android:paddingBottom="3dp"
+        android:gravity="center_vertical" android:orientation="horizontal" android:layoutDirection="ltr">
+        <TextView android:id="@+id/prayer_live_dhuhr_time"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="start"
+            android:fontFamily="@font/widget_latin_digits" android:includeFontPadding="false"
+            android:maxLines="1" android:textLocale="en-US" android:textColor="@color/prayer_live_primary"
+            android:textDirection="ltr" android:textSize="18sp" android:textStyle="bold" />
+        <TextView android:id="@+id/prayer_live_dhuhr_iqama"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp"
+            android:fontFamily="@font/widget_latin_digits" android:gravity="start"
+            android:includeFontPadding="false" android:maxLines="1" android:textLocale="en-US"
+            android:textColor="@color/prayer_live_primary" android:textDirection="ltr" android:textSize="14sp" android:textStyle="normal" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:layout_marginStart="8dp" android:gravity="end|center_vertical"
+            android:orientation="horizontal" android:layoutDirection="ltr">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center_horizontal">
+                <TextView android:id="@+id/prayer_live_dhuhr_phase"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:includeFontPadding="false" android:maxLines="1" android:textColor="@color/prayer_live_iqama_light"
+                    android:textDirection="rtl" android:textSize="10sp" android:visibility="gone" />
+                <TextView android:id="@+id/prayer_live_dhuhr_countdown"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:fontFamily="@font/widget_latin_digits" android:includeFontPadding="false"
+                    android:maxLines="1" android:textLocale="en-US" android:textColor="@color/prayer_live_remaining_light"
+                    android:textDirection="ltr" android:textSize="18sp" android:textStyle="bold" android:visibility="gone" />
+            </LinearLayout>
+            <TextView android:id="@+id/prayer_live_dhuhr_label"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="96dp"
+                android:gravity="end" android:layout_marginStart="6dp" android:includeFontPadding="false"
+                android:maxLines="1" android:ellipsize="end" android:textColor="@color/prayer_live_secondary"
+                android:textDirection="rtl" android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:minHeight="34dp" android:paddingTop="3dp" android:paddingBottom="3dp"
+        android:gravity="center_vertical" android:orientation="horizontal" android:layoutDirection="ltr">
+        <TextView android:id="@+id/prayer_live_asr_time"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="start"
+            android:fontFamily="@font/widget_latin_digits" android:includeFontPadding="false"
+            android:maxLines="1" android:textLocale="en-US" android:textColor="@color/prayer_live_primary"
+            android:textDirection="ltr" android:textSize="18sp" android:textStyle="bold" />
+        <TextView android:id="@+id/prayer_live_asr_iqama"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp"
+            android:fontFamily="@font/widget_latin_digits" android:gravity="start"
+            android:includeFontPadding="false" android:maxLines="1" android:textLocale="en-US"
+            android:textColor="@color/prayer_live_primary" android:textDirection="ltr" android:textSize="14sp" android:textStyle="normal" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:layout_marginStart="8dp" android:gravity="end|center_vertical"
+            android:orientation="horizontal" android:layoutDirection="ltr">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center_horizontal">
+                <TextView android:id="@+id/prayer_live_asr_phase"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:includeFontPadding="false" android:maxLines="1" android:textColor="@color/prayer_live_iqama_light"
+                    android:textDirection="rtl" android:textSize="10sp" android:visibility="gone" />
+                <TextView android:id="@+id/prayer_live_asr_countdown"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:fontFamily="@font/widget_latin_digits" android:includeFontPadding="false"
+                    android:maxLines="1" android:textLocale="en-US" android:textColor="@color/prayer_live_remaining_light"
+                    android:textDirection="ltr" android:textSize="18sp" android:textStyle="bold" android:visibility="gone" />
+            </LinearLayout>
+            <TextView android:id="@+id/prayer_live_asr_label"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="96dp"
+                android:gravity="end" android:layout_marginStart="6dp" android:includeFontPadding="false"
+                android:maxLines="1" android:ellipsize="end" android:textColor="@color/prayer_live_secondary"
+                android:textDirection="rtl" android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:minHeight="34dp" android:paddingTop="3dp" android:paddingBottom="3dp"
+        android:gravity="center_vertical" android:orientation="horizontal" android:layoutDirection="ltr">
+        <TextView android:id="@+id/prayer_live_maghrib_time"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="start"
+            android:fontFamily="@font/widget_latin_digits" android:includeFontPadding="false"
+            android:maxLines="1" android:textLocale="en-US" android:textColor="@color/prayer_live_primary"
+            android:textDirection="ltr" android:textSize="18sp" android:textStyle="bold" />
+        <TextView android:id="@+id/prayer_live_maghrib_iqama"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp"
+            android:fontFamily="@font/widget_latin_digits" android:gravity="start"
+            android:includeFontPadding="false" android:maxLines="1" android:textLocale="en-US"
+            android:textColor="@color/prayer_live_primary" android:textDirection="ltr" android:textSize="14sp" android:textStyle="normal" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:layout_marginStart="8dp" android:gravity="end|center_vertical"
+            android:orientation="horizontal" android:layoutDirection="ltr">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center_horizontal">
+                <TextView android:id="@+id/prayer_live_maghrib_phase"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:includeFontPadding="false" android:maxLines="1" android:textColor="@color/prayer_live_iqama_light"
+                    android:textDirection="rtl" android:textSize="10sp" android:visibility="gone" />
+                <TextView android:id="@+id/prayer_live_maghrib_countdown"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:fontFamily="@font/widget_latin_digits" android:includeFontPadding="false"
+                    android:maxLines="1" android:textLocale="en-US" android:textColor="@color/prayer_live_remaining_light"
+                    android:textDirection="ltr" android:textSize="18sp" android:textStyle="bold" android:visibility="gone" />
+            </LinearLayout>
+            <TextView android:id="@+id/prayer_live_maghrib_label"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="96dp"
+                android:gravity="end" android:layout_marginStart="6dp" android:includeFontPadding="false"
+                android:maxLines="1" android:ellipsize="end" android:textColor="@color/prayer_live_secondary"
+                android:textDirection="rtl" android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:minHeight="34dp" android:paddingTop="3dp" android:paddingBottom="3dp"
+        android:gravity="center_vertical" android:orientation="horizontal" android:layoutDirection="ltr">
+        <TextView android:id="@+id/prayer_live_isha_time"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="start"
+            android:fontFamily="@font/widget_latin_digits" android:includeFontPadding="false"
+            android:maxLines="1" android:textLocale="en-US" android:textColor="@color/prayer_live_primary"
+            android:textDirection="ltr" android:textSize="18sp" android:textStyle="bold" />
+        <TextView android:id="@+id/prayer_live_isha_iqama"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp"
+            android:fontFamily="@font/widget_latin_digits" android:gravity="start"
+            android:includeFontPadding="false" android:maxLines="1" android:textLocale="en-US"
+            android:textColor="@color/prayer_live_primary" android:textDirection="ltr" android:textSize="14sp" android:textStyle="normal" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:layout_marginStart="8dp" android:gravity="end|center_vertical"
+            android:orientation="horizontal" android:layoutDirection="ltr">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center_horizontal">
+                <TextView android:id="@+id/prayer_live_isha_phase"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:includeFontPadding="false" android:maxLines="1" android:textColor="@color/prayer_live_iqama_light"
+                    android:textDirection="rtl" android:textSize="10sp" android:visibility="gone" />
+                <TextView android:id="@+id/prayer_live_isha_countdown"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:fontFamily="@font/widget_latin_digits" android:includeFontPadding="false"
+                    android:maxLines="1" android:textLocale="en-US" android:textColor="@color/prayer_live_remaining_light"
+                    android:textDirection="ltr" android:textSize="18sp" android:textStyle="bold" android:visibility="gone" />
+            </LinearLayout>
+            <TextView android:id="@+id/prayer_live_isha_label"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="96dp"
+                android:gravity="end" android:layout_marginStart="6dp" android:includeFontPadding="false"
+                android:maxLines="1" android:ellipsize="end" android:textColor="@color/prayer_live_secondary"
+                android:textDirection="rtl" android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <!-- Only fallback/unavailable states need this note; a running countdown has no header or footer row. -->
+    <TextView android:id="@+id/prayer_live_note" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="3dp" android:gravity="end" android:includeFontPadding="false"
+        android:maxLines="1" android:ellipsize="end" android:textColor="@color/prayer_live_secondary"
+        android:textDirection="rtl" android:textSize="11sp" android:visibility="gone" />
+</LinearLayout>

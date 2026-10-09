@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prayer_iqama_channel_name">إقامة الصلاة</string>
+    <string name="prayer_iqama_channel_description">تنبيه عند وقت الإقامة المحدد بصوت إشعار الجهاز الذي تختاره</string>
+    <string name="prayer_iqama_sound_picker_title">صوت تنبيه الإقامة</string>
+    <string name="prayer_iqama_sound_default">صوت إشعار الجهاز الافتراضي</string>
+    <string name="prayer_iqama_sound_silent">بدون صوت</string>
+    <string name="prayer_iqama_sound_picker_unavailable">يمكنك تغيير صوت تنبيه الإقامة من إعدادات إشعارات الجهاز.</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark theme -->
+    <color name="prayer_widget_dark_primary">#FFF7DE</color>
+    <color name="prayer_widget_dark_secondary">#D2CAB5</color>
+    <color name="prayer_widget_dark_accent">#F3C35A</color>
+    <color name="prayer_widget_dark_highlight">#85F0AB</color>
+    <color name="prayer_widget_dark_divider">#526049</color>
+
+    <!-- Light theme, matched to the warm iOS reference -->
+    <color name="prayer_widget_light_primary">#282116</color>
+    <color name="prayer_widget_light_secondary">#706754</color>
+    <color name="prayer_widget_light_accent">#A84A0C</color>
+    <color name="prayer_widget_light_highlight">#12642F</color>
+    <color name="prayer_widget_light_divider">#DFC99A</color>
+</resources>

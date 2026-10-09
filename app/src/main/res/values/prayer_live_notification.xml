@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prayer_live_channel_name">إشعار مواقيت الصلاة الدائم</string>
+    <string name="prayer_live_channel_description">مواقيت الصلاة والعد التنازلي للصلاة والإقامة</string>
+    <string name="prayer_live_close">إغلاق</string>
+    <string name="prayer_live_refresh_needed">افتح مواقيت الصلاة لتحديثها</string>
+    <string name="prayer_live_deadline_note">موعد الصلاة أو الإقامة</string>
+    <string name="prayer_live_remaining">الوقت المتبقي</string>
+    <string name="prayer_live_iqama_time">إقامة %1$s</string>
+    <color name="prayer_live_background">#FFF7E5</color>
+    <color name="prayer_live_primary">#40250E</color>
+    <color name="prayer_live_secondary">#796953</color>
+    <color name="prayer_live_accent">#AE6800</color>
+    <color name="prayer_live_dark_background">#2B1B10</color>
+    <color name="prayer_live_dark_primary">#FFF7E5</color>
+    <color name="prayer_live_dark_secondary">#CCBBA3</color>
+    <color name="prayer_live_remaining_light">#12642F</color>
+    <color name="prayer_live_remaining_dark">#85F0AB</color>
+    <color name="prayer_live_iqama_light">#A32335</color>
+    <color name="prayer_live_iqama_dark">#FFB4AE</color>
+</resources>

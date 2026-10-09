@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="146dp" android:layout_height="34dp"
+    android:orientation="horizontal" android:gravity="center"
+    android:layoutDirection="ltr" android:background="@drawable/prayer_notch_background"
+    android:paddingLeft="14dp" android:paddingRight="14dp" android:clickable="true" android:focusable="true"
+    android:contentDescription="@string/prayer_notch_expand">
+    <TextView android:id="@+id/prayer_notch_countdown"
+        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+        android:gravity="center" android:singleLine="true" android:textDirection="ltr"
+        android:fontFamily="monospace" android:textSize="12sp" android:textColor="@color/prayer_notch_text" />
+    <ImageView android:id="@+id/prayer_notch_icon"
+        android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="8dp"
+        android:src="@drawable/ic_prayer_clock" android:importantForAccessibility="no" />
+</LinearLayout>

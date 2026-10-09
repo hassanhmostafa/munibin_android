@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prayer_notch_expand">عرض مواقيت الصلاة</string>
+    <string name="prayer_notch_close">إغلاق الشريط العائم</string>
+    <string name="prayer_notch_remaining">الوقت المتبقي</string>
+    <string name="prayer_notch_refresh_needed">افتح مواقيت الصلاة لتحديثها</string>
+    <string name="prayer_notch_iqama">Iqama</string>
+    <color name="prayer_notch_text">#FFFFFFFF</color>
+    <color name="prayer_notch_secondary">#FFADADAD</color>
+    <color name="prayer_notch_active">#FFF1BC67</color>
+    <color name="prayer_notch_remaining_color">#FF85F0AB</color>
+    <color name="prayer_notch_iqama">#FFFFB4AE</color>
+</resources>
